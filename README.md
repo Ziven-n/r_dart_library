@@ -1,3 +1,7 @@
+# 修复hashValues的问题
+
+
+
 # r_dart_library
 ![dart](https://img.shields.io/badge/language-dart-orange.svg) [![pub package](https://img.shields.io/pub/v/r_dart_library.svg)](https://pub.dartlang.org/packages/r_dart_library) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
