@@ -39,7 +39,6 @@ class AssetSvg extends ImageProvider<AssetSvg> {
 
     var rawSvg = await rootBundle.loadString(asset);
     final DrawableRoot svgRoot = await svg.fromSvgString(rawSvg, rawSvg);
-    // ignore: deprecated_member_use
     final scale = window.devicePixelRatio;
     final ui.Picture picture = svgRoot.toPicture(
       size: Size(
@@ -59,18 +58,14 @@ class AssetSvg extends ImageProvider<AssetSvg> {
   }
 
   @override
-  // ignore: non_nullable_equals_parameter
   bool operator ==(dynamic other) {
     if (other.runtimeType != runtimeType) return false;
     final AssetSvg typedOther = other;
-    return asset == typedOther.asset &&
-        width == typedOther.width &&
-        height == typedOther.height;
+    return asset == typedOther.asset && width == typedOther.width && height == typedOther.height;
   }
 
   @override
-  // ignore: sdk_version_since
-  int get hashCode => Object.hash(asset, width, height, 1.0);
+  int get hashCode => hashValues(asset.hashCode, width, height, 1.0);
 
   @override
   String toString() => '$runtimeType(${describeIdentity(asset)}, scale: 1.0)';
