@@ -61,11 +61,14 @@ class AssetSvg extends ImageProvider<AssetSvg> {
   bool operator ==(dynamic other) {
     if (other.runtimeType != runtimeType) return false;
     final AssetSvg typedOther = other;
-    return asset == typedOther.asset && width == typedOther.width && height == typedOther.height;
+    return asset == typedOther.asset &&
+        width == typedOther.width &&
+        height == typedOther.height;
   }
 
   @override
-  int get hashCode => hashValues(asset.hashCode, width, height, 1.0);
+  // ignore: sdk_version_since
+  int get hashCode => Object.hash(asset, width, height, 1.0);
 
   @override
   String toString() => '$runtimeType(${describeIdentity(asset)}, scale: 1.0)';
